@@ -13,6 +13,10 @@ For more installation help, read the documentation of a Nextflow workshop on VSC
 export SBATCH_ACCOUNT={FILL_IN_NAME_OF_YOUR_PROJECT}
 # A list of all projects can be viewed via
 ls ${VSC_SCRATCH_PROJECTS_BASE}
+# The following are not striclty needed, but will prevent problems with storage capacity in your personal scratch
+export NXF_HOME=${VSC_SCRATCH_PROJECTS_BASE}/${SBATCH_ACCOUNT}/.nextflow/
+export APPTAINER_TMPDIR=${VSC_SCRATCH_PROJECTS_BASE}/${SBATCH_ACCOUNT}/.apptainer/
+export APPTAINER_CACHEDIR=${VSC_SCRATCH_PROJECTS_BASE}/${SBATCH_ACCOUNT}/.apptainer/
 ```
 
 First you should go to the cluster you want to run the pipeline on. You can check what clusters have the most free space on this [link](https://shieldon.ugent.be:8083/pbsmon-web-users/). Use the following commands to easily switch between clusters:
